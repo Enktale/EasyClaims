@@ -194,7 +194,7 @@ public class EasyClaimsCommand extends AbstractPlayerCommand {
 
     // Static fake player UUID for testing (consistent across sessions)
     private static final UUID FAKE_PLAYER_UUID = UUID.fromString("00000000-0000-0000-0000-000000000001");
-    private static final String FAKE_PLAYER_NAME = "TestPlayer";
+    public static final String FAKE_PLAYER_NAME = "Spawn";
 
     /**
      * Admin command to claim a chunk as a fake player for testing protection.

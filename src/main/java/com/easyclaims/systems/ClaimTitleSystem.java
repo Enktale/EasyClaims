@@ -1,5 +1,6 @@
 package com.easyclaims.systems;
 
+import com.easyclaims.commands.EasyClaimsCommand;
 import com.easyclaims.data.ClaimStorage;
 import com.easyclaims.util.ChunkUtil;
 import com.hypixel.hytale.component.ArchetypeChunk;
@@ -27,7 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ClaimTitleSystem extends EntityTickingSystem<EntityStore> {
 
     private static final Message WILDERNESS_MESSAGE = Message.raw("Wilderness").color(new Color(85, 255, 85));
-    private static final Message EASY_CLAIMS_MESSAGE = Message.raw("EasyClaims");
+    private static final Message EASY_CLAIMS_MESSAGE = Message.raw("Enktale");
     private static final String WILDERNESS_TEXT = "Wilderness";
 
     private final ClaimStorage claimStorage;
@@ -63,6 +64,9 @@ public class ClaimTitleSystem extends EntityTickingSystem<EntityStore> {
         if (claimOwner != null) {
             String ownerName = claimStorage.getPlayerName(claimOwner);
             titleText = ownerName + "'s Claim";
+            if(ownerName != null && ownerName.equalsIgnoreCase(EasyClaimsCommand.FAKE_PLAYER_NAME)){
+                titleText = EasyClaimsCommand.FAKE_PLAYER_NAME;
+            }
 
             // Use different colors for own claims vs others
             if (claimOwner.equals(playerRef.getUuid())) {
