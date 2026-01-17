@@ -2,7 +2,7 @@
 
 > **Built for the European Hytale survival server at `play.hyfyve.net`**
 
-Protect your builds on Hytale servers! Claim land, see it on your map, and share with friends.
+Protect your builds on Hytale servers! Claim land, see it on your map, and share with friends. 
 
 ## Quick Start
 
